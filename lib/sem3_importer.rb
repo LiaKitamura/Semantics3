@@ -2,13 +2,9 @@ require 'rubygems'
 require 'semantics3'
 
 class Sem3Importer
-  @api_key='API_KEY_HERE'
-  @api_secret='API_SECRET_HERE'
-
   # This is not the ideal way to get the data from the DB. But works for now while I work on cleaning this up
-
-  def self.products
-    sem3 = Semantics3::Products.new(@api_key,@api_secret)
+  def self.product
+    sem3 = Semantics
     
     sem3.products_field( "name", "tents" )
     sem3.products_field( "name", "knives and tools" )
