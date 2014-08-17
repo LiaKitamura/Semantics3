@@ -10,6 +10,6 @@ namespace :seed do
   task products: :environment do
     require Rails.root.join('lib', 'sem3_importer')
     puts "I'm importing products"
-    Sem3Importer.product
+    Sem3Importer.products
   end
 end

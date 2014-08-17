@@ -3,12 +3,13 @@ require 'semantics3'
 
 class Sem3Importer
   # This is not the ideal way to get the data from the DB. But works for now while I work on cleaning this up
-  def self.product
+  def self.products
+
     sem3 = Semantics
-    
+
     sem3.products_field( "name", "tents" )
-    sem3.products_field( "name", "knives and tools" )
-    sem3.products_field( "name", "downhill skiing" )
+    # sem3.products_field( "name", "knives and tools" )
+    # sem3.products_field( "name", "downhill skiing" )
     # sem3.products_field( "name", "goggles" )
 
     constructedJson = sem3.get_query_json( "products" )
