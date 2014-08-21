@@ -1,2 +1,1 @@
-# not quite working yet. manual set is required
-Semantics = Semantics3::Products.new('API_KEY', 'API_SECRET')
+Semantics = Semantics3::Products.new(ENV['API_KEY'], ENV['API_SECRET'])
