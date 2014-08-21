@@ -2,16 +2,17 @@ require 'rubygems'
 require 'semantics3'
 require 'mongo'
 
-
 class Sem3Importer
 
   def self.products
     sem3 = Semantics
 
-    sem3.products_field( "name", "tents" )
-    sem3.products_field( "name", "knives and tools" )
-    sem3.products_field( "name", "downhill skiing" )
-    # sem3.products_field( "name", "goggles" )
+    categories = ['tents', 'knives and tools', 'downhill skiing']
+
+    categories.each do |category|
+      sem3.products_field( "name", "#{category}" )
+    end
+
 
     constructedJson = sem3.get_query_json( "products" )
     productsHash = sem3.get_products
